@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Items</h1>
+        <input type="text" id="newItem" placeholder="Add a new item" />
+        <button onclick="addItem()">Add Item</button>
+        <ul id="itemList"></ul>
+        <div class="description">
+            <p>
+                This simple application allows you to manage a list of items. You can add new items to the list,
+                view all existing items, and delete items you no longer need. The frontend is built with plain HTML, 
+                CSS, and JavaScript, and it interacts with a RESTful API created with Express.js running on a Node.js server.
+            </p>
+        </div>
+        <ul>
+            <li>
+                <strong>Get Items:</strong>
+                <ul>
+                    <li>Method: GET</li>
+                    <li>URL: <p>http://localhost:3000/api/items</p></li>
+                </ul>
+            </li>
+            <li>
+                <strong>Create Item:</strong>
+                <ul>
+                    <li>Method: POST</li>
+                    <li>URL: <p>http://localhost:3000/api/items</p></li>
+                    <li>Sample Body:
+                        <pre><p>
+                            {`"id": "1", "name": "Sample Item"`}
+                        </p></pre>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Update Item:</strong>
+                <ul>
+                    <li>Method: PUT</li>
+                    <li>URL: <p>http://localhost:3000/api/items/1</p></li>
+                    <li>Sample Body:
+                        <pre><p>
+                            {`"id": "1", "name": "Updated Item"`}
+                        </p></pre>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Delete Item:</strong>
+                <ul>
+                    <li>Method: DELETE</li>
+                    <li>URL: <p>http://localhost:3000/api/items/1</p></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
