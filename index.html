@@ -24,18 +24,21 @@
                 <strong>Get Items:</strong>
                 <ul>
                     <li>Method: GET</li>
-                    <li>URL: <p>http://localhost:3000/api/items</p></li>
+                    <li>URL: <code>http://localhost:3000/api/items</code></li>
                 </ul>
             </li>
             <li>
                 <strong>Create Item:</strong>
                 <ul>
                     <li>Method: POST</li>
-                    <li>URL: <p>http://localhost:3000/api/items</p></li>
+                    <li>URL: <code>http://localhost:3000/api/items</code></li>
                     <li>Sample Body:
-                        <pre><p>
-                            {`"id": "1", "name": "Sample Item"`}
-                        </p></pre>
+                        <pre><code>
+{
+  "name": "Sample Item",
+  "quantity": 10
+}
+                        </code></pre>
                     </li>
                 </ul>
             </li>
@@ -43,11 +46,14 @@
                 <strong>Update Item:</strong>
                 <ul>
                     <li>Method: PUT</li>
-                    <li>URL: <p>http://localhost:3000/api/items/1</p></li>
+                    <li>URL: <code>http://localhost:3000/api/items/1</code></li>
                     <li>Sample Body:
-                        <pre><p>
-                            {`"id": "1", "name": "Updated Item"`}
-                        </p></pre>
+                        <pre><code>
+{
+  "name": "Updated Item",
+  "quantity": 5
+}
+                        </code></pre>
                     </li>
                 </ul>
             </li>
@@ -55,7 +61,7 @@
                 <strong>Delete Item:</strong>
                 <ul>
                     <li>Method: DELETE</li>
-                    <li>URL: <p>http://localhost:3000/api/items/1</p></li>
+                    <li>URL: <code>http://localhost:3000/api/items/1</code></li>
                 </ul>
             </li>
         </ul>
