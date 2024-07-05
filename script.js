@@ -2,9 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchItems();
 });
 
+const baseURL = 'https://hw-3-csc-31800.vercel.app';
+
 async function fetchItems() {
     try {
-        const response = await fetch('http://localhost:3000/api/items');
+        const response = await fetch(`${baseURL}/api/items`);
         const items = await response.json();
         const itemList = document.getElementById('itemList');
         itemList.innerHTML = '';
@@ -31,7 +33,7 @@ async function addItem() {
         return;
     }
     try {
-        const response = await fetch('http://localhost:3000/api/items', {
+        const response = await fetch(`${baseURL}/api/items`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -51,7 +53,7 @@ async function addItem() {
 
 async function deleteItem(id) {
     try {
-        const response = await fetch(`http://localhost:3000/api/items/${id}`, {
+        const response = await fetch(`${baseURL}/api/items/${id}`, {
             method: 'DELETE'
         });
         if (response.ok) {
