@@ -1,13 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const Product = require('./ProductModels');  // Adjust the path if necessary
+const Product = require('../Models/productModel'); // Adjust the path if necessary
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors());
+
+// CORS configuration
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 app.get('/api/items', async (req, res) => {
     try {
@@ -65,10 +71,9 @@ app.delete('/api/items/:id', async (req, res) => {
 
 mongoose.connect('mongodb+srv://KEVINTESTING:wnLGX7pDGnT0zifK@cluster0.ol9fksg.mongodb.net/Node-API?retryWrites=true&w=majority&appName=Cluster0')
     .then(() => {
-        app.listen(PORT, () => {
-            console.log(`Server is running on http://localhost:${PORT}`);
-        });
-        console.log('connected to mongoDB');
-    }).catch(() => {
-        console.log('error');
+        console.log('Connected to MongoDB');
+    }).catch((error) => {
+        console.log('Error:', error.message);
     });
+
+module.exports = app;

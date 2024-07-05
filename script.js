@@ -2,11 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchItems();
 });
 
-const baseURL = 'https://hw-3-csc-31800.vercel.app';
+const baseURL = 'https://hw-33-f0i9kttw6-1forb1dden1s-projects.vercel.app/';
 
 async function fetchItems() {
     try {
         const response = await fetch(`${baseURL}/api/items`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         const items = await response.json();
         const itemList = document.getElementById('itemList');
         itemList.innerHTML = '';
